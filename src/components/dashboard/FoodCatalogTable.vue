@@ -35,14 +35,8 @@ export default {
   methods: {
     addFood: function(payload) {
 
-      if (!this.$store.state.user) {
-        alert('you must be signed in')
-        return
-      }
-
       payload["servings"] = parseInt(this.servings.parentId[payload.id])
       payload["date"] = this.date
-      payload["user_id"] = this.$store.state.user.id
       payload["sort_order"] = (this.consumed.length + 1)
 
       this.$store.dispatch('consumed/addFood', payload)

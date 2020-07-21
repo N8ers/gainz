@@ -16,6 +16,7 @@ const mutations = {
 
 const actions = {
   async getFoods ({ commit }, date) {
+    console.log('getFoods')
     let foods = await getDaysConsumption(date);
     commit("SET_CONSUMED", foods.data)
   },
