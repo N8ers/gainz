@@ -109,7 +109,7 @@ export default {
       // }
       for (let i = 0; i < newFoods.length; i++) {
         if (newFoods[i].consumed_at != i) {
-          let payload = {foods: newFoods, user: this.user}
+          let payload = {foods: newFoods}
           this.$store.dispatch('consumed/restructureConsumedAt', payload)
           return;
         }

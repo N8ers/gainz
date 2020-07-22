@@ -16,7 +16,6 @@ const mutations = {
 
 const actions = {
   async getFoods ({ commit }, date) {
-    console.log('getFoods')
     let foods = await getDaysConsumption(date);
     commit("SET_CONSUMED", foods.data)
   },
@@ -25,15 +24,14 @@ const actions = {
     return await removeConsumedFood(id)
   },
   async addFood (context, payload) {
-    // console.log('payload', payload)
     return await addConsumedFood(payload)
   },
   async restructureConsumedAt (context, payload) {
-    let { foods, user } = payload
+    let { foods } = payload
     for (let i = 0; i < foods.length; i++) {
       foods[i].sort_order = i
     }
-    let newPayload = { foods, user: user.id }
+    let newPayload = { foods }
     return await reorderConsumedAt(newPayload)
   }
 };

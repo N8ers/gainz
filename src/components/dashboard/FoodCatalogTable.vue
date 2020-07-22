@@ -34,7 +34,6 @@ export default {
   props: [ 'date', 'consumed' ],
   methods: {
     addFood: function(payload) {
-
       payload["servings"] = parseInt(this.servings.parentId[payload.id])
       payload["date"] = this.date
       payload["sort_order"] = (this.consumed.length + 1)
