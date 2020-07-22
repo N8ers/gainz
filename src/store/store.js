@@ -8,14 +8,8 @@ import persons from "./modules/persons";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    user: null
-  },
-  mutations: {
-    SET_USER(state, user) {
-      this.state.user = user
-    }
-  },
+  state: {},
+  mutations: {},
   actions: {},
   modules: {
     food,

@@ -52,7 +52,6 @@ export async function addConsumedFood ( payload ) {
 }
 
 export async function reorderConsumedAt ( payload ) {
-  console.log('reorderConstumedAt', payload)
   return apiClient.put('/consumed/consumed_at_reorder', {
     payload
   })

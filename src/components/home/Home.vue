@@ -1,8 +1,6 @@
 <template>
   <div>
     <h1>Welcome to gains-ville</h1>
-    <!-- <button @click="changeUser({ id: 1, name: 'n8-dev' })"><h5>be n8-dev (id 1)</h5></button> -->
-    <!-- <button @click="changeUser({ id: 2, name: 'n8-test' })"><h5>be n8-test (id 2)</h5></button> -->
     <Login />
     <Signup />
   </div>
@@ -19,11 +17,7 @@ export default {
     Signup
   },
   props: {},
-  // methods: {
-  //   changeUser: function (user) {
-  //     this.$store.commit('SET_USER', user)
-  //   }
-  // }
+  methods: {}
 };
 </script>
 
