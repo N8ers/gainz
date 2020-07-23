@@ -28,7 +28,6 @@ const actions = {
   // attempt login
   async attemptLogin ({ commit }, userInput) {
     let userResponse = await login( userInput );
-    console.log('userRespons: ', userResponse)
     if (userResponse.data 
       && userResponse.data.message 
       && userResponse.data.message === 'email not registered') {
@@ -40,8 +39,7 @@ const actions = {
   },
 
   async attemptSignup (context, userInput) {
-    let userResponse = await signup( userInput );
-    console.log('userResponse: ', userResponse.data)
+    await signup( userInput );
   }
 };
 

@@ -31,7 +31,6 @@ export default {
         this.userInput.email !== (null || '') 
         && this.userInput.userName !== (null || '') 
         && this.userInput.password !== (null || '')) {
-        console.log('userInput: ', this.userInput)
         this.$store.dispatch('persons/attemptSignup', this.userInput)
       }
     }

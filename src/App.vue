@@ -16,6 +16,7 @@ export default {
     logout: function () {
       localStorage.clear()
       this.$store.commit('persons/CLEAR_USER')
+      this.$router.push('/')
     }
   }
 };

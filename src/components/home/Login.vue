@@ -25,7 +25,6 @@ export default {
   methods: {
     attemptLogin: function () {
       if (this.userInput.email !== (null || '') && this.userInput.password !== (null || '')) {
-        console.log('userInput: ', this.userInput)
         this.$store.dispatch('persons/attemptLogin', this.userInput)
       }
     }
