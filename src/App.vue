@@ -16,8 +16,13 @@ export default {
     logout: function () {
       localStorage.clear()
       this.$store.commit('persons/CLEAR_USER')
-      this.$router.push('/')
+      if (this.$router.currentRoute.name !== 'Home') {
+        this.$router.push('/')
+      }
     }
+  },
+  created () {
+    this.$store.dispatch('persons/checkAuth')
   }
 };
 </script>

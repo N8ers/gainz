@@ -1,12 +1,19 @@
 import axios from "axios"
 
+let token;
+if (localStorage.token) {
+  token = localStorage.getItem('token')
+}
+
+console.log('token ? ', token)
+ 
 const apiClient = axios.create({
   baseURL: "http://localhost:3000",
   withCredentials: false,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
-    authorization: `Bearer ${localStorage.getItem('token')}`
+    authorization: `Bearer ${token}`
   },
   timeout: 10000
 })
@@ -72,4 +79,8 @@ export async function signup ( payload ) {
   return apiClient.put('/person/signup', {
     payload
   })
+}
+
+export async function checkJWT () {
+  return apiClient.get('/person/checkJWT')
 }

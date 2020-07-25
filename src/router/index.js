@@ -1,22 +1,23 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import PersonsState from "../store/modules/persons";
+// import store from "../store/store";
 
+import personsStore from "../store/modules/persons";
 import Home from "../components/home/Home.vue";
 import Dashboard from "../components/dashboard/Dashboard.vue";
 import FoodDatabase from "../components/foodDatabase/FoodDatabase.vue";
 
+Vue.use(VueRouter);
+
 const guard = async (to, from, next) => {
-  let user = PersonsState.state.user;
+  let user = personsStore.state.user;
   if (user.email && user.id && user.name) {
     next()
   } else {
-    alert('NOT SIGNED IN BRO')
+    alert('NOT SIGNED IN BRO ')
     next('/')
   }
 }
-
-Vue.use(VueRouter);
 
 const routes = [
   {
