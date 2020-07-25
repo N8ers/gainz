@@ -5,8 +5,6 @@ if (localStorage.token) {
   token = localStorage.getItem('token')
 }
 
-console.log('token ? ', token)
- 
 const apiClient = axios.create({
   baseURL: "http://localhost:3000",
   withCredentials: false,

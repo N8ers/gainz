@@ -31,7 +31,8 @@ export default {
         this.userInput.email !== (null || '') 
         && this.userInput.userName !== (null || '') 
         && this.userInput.password !== (null || '')) {
-        this.$store.dispatch('persons/attemptSignup', this.userInput)
+          this.userInput.email = this.userInput.email.toLowerCase()
+          this.$store.dispatch('persons/attemptSignup', this.userInput)
       }
     }
   }

@@ -103,10 +103,6 @@ export default {
   },
   watch: {
     consumed (newFoods) {
-      // if (!this.user.id || !this.user.email) {
-      //   alert('gotta sign in')
-      //   return
-      // }
       for (let i = 0; i < newFoods.length; i++) {
         if (newFoods[i].consumed_at != i) {
           let payload = {foods: newFoods}

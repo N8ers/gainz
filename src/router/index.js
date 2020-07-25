@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-// import store from "../store/store";
 
 import personsStore from "../store/modules/persons";
 import Home from "../components/home/Home.vue";
