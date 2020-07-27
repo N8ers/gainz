@@ -1,3 +1,5 @@
+import router from '../../router/index'
+
 import { login, signup, checkJWT } from "../../services/eventServices"
  
 const state = {
@@ -51,6 +53,14 @@ const actions = {
       commit("SET_USER", result.data.user)
     } else {
       console.log('no token :(')
+    }
+  },
+
+  async forceUserLogout ({ commit }) {
+    alert('forceUserLogout called')
+    commit("CLEAR_USER")
+    if (router.currentRoute.name !== 'Home') {
+      router.push('/')
     }
   }
 };
