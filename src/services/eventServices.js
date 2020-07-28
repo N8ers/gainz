@@ -1,5 +1,5 @@
 import axios from "axios"
-import personsModule from "../store/modules/persons";
+// import personsModule from "../store/modules/persons";
 
 const apiClient = axios.create({
   baseURL: "http://localhost:3000",
@@ -19,11 +19,10 @@ function getToken () {
 }
 
 function forceUserLogout (response) {
-  console.log('response: ', response.status)
-  if (response.status === 403) {
+  if (response.data.status && response.data.status == 403) {
     alert('looks like you timed out')
     localStorage.clear()
-    personsModule.dispatch('forceUserLogout')
+    // personsModule.dispatch('forceUserLogout')
     return;
   }
 }
@@ -69,9 +68,10 @@ export async function removeConsumedFood ( consumed_id ) {
 
 export async function addConsumedFood ( payload ) {
   getToken()
-  let response = apiClient.post('/consumed/add', {
+  let response = await apiClient.post('/consumed/add', {
     payload
   })
+
   forceUserLogout(response)
   return response
 }
