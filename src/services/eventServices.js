@@ -1,5 +1,5 @@
 import axios from "axios"
-// import personsModule from "../store/modules/persons";
+import router from "../router/index"
 
 const apiClient = axios.create({
   baseURL: "http://localhost:3000",
@@ -22,7 +22,7 @@ function forceUserLogout (response) {
   if (response.data.status && response.data.status == 403) {
     alert('looks like you timed out')
     localStorage.clear()
-    // personsModule.dispatch('forceUserLogout')
+    router.push('/')
     return;
   }
 }

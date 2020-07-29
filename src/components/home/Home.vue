@@ -17,7 +17,10 @@ export default {
     Signup
   },
   props: {},
-  methods: {}
+  methods: {},
+  created () {
+    // this.$store.dispatch('persons/checkAuth')
+  }
 };
 </script>
 
